@@ -212,4 +212,8 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+
+    Barryvdh\Debugbar\ServiceProvider::class,
+    'Debugbar' => Barryvdh\Debugbar\Facades\Debugbar::class,
+
 ];
