@@ -19,6 +19,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Routes Users
+Route::get('/users', [UsersController::class, 'index'])->name('characters.index');
+Route::get('/users/create', [UsersController::class, 'create'])->name('characters.create');
+Route::post('/users', [UsersController::class, 'store'])->name('characters.store');
+Route::get('/users/{id}', [UsersController::class, 'show'])->name('characters.show');
+Route::get('/users/{id}/edit', [UsersController::class, 'edit'])->name('characters.edit');
+Route::put('/users/{id}', [UsersController::class, 'update'])->name('characters.update');
+Route::delete('/users/{id}', [UsersController::class, 'destroy'])->name('characters.destroy');
+
+
 
 // Characters routes
 Route::get('/characters', [CharacterController::class, 'index'])->name('characters.index');
