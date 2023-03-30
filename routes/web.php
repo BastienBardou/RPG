@@ -32,9 +32,9 @@ Route::put('/users/{id}', [UsersController::class, 'update'])->name('users.updat
 Route::delete('/users/{id}', [UsersController::class, 'destroy'])->name('users.destroy');
 
 //Routes Connection
-Route::get('/login/connection', [LoginController::class, 'index'])->name('login.index');
-Route::post('/login/connection', [LoginController::class, 'auth'])->name('login.auth');
-
+Route::get('/login/connection', [LoginController::class, 'showloginForm'])->name('login.index');
+Route::post('/login/connection', [LoginController::class, 'login'])->name('login.auth');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Characters routes
 Route::get('/characters', [CharacterController::class, 'index'])->name('characters.index');
@@ -61,3 +61,14 @@ Route::delete('/groups/{group}/remove-character/{character}', [GroupController::
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+// Routes pour le catalogue de personnages
+Route::get('/characters/catalog', [CharacterController::class, 'catalog'])->name('characters.catalog');
+
+// Route pour l'invitation de personnage
+Route::post('/characters/{character}/invite', [CharacterController::class, 'invite'])->name('characters.invite');
+
+// Route pour l'acceptation ou le refus d'invitation
+Route::post('/teams/{team}/characters/{character}/accept', [TeamController::class, 'accept'])->name('teams.characters.accept');
+Route::post('/teams/{team}/characters/{character}/reject', [TeamController::class, 'reject'])->name('teams.characters.reject');
