@@ -18,7 +18,17 @@ use App\Http\Controllers\UsersController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+}) ->name('home');
+
+
+//Route NavBar 
+
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/characters', 'CharacterController@index')->name('characters.index');
+Route::get('/groups', 'GroupController@index')->name('groups.index');
+Route::get('/catalog', 'CharacterController@catalog')->name('characters.catalog');
+Route::get('/teams', 'TeamController@index')->name('teams.index');
+Route::post('/logout', 'AuthController@logout')->name('logout');
 
 
 

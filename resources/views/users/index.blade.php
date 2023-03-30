@@ -1,4 +1,7 @@
-<h1>The Rise of Heroes</h1>
+@extends('layouts.app')
+
+@section('content')
+@endsection
 
 
   <button><a href="{{ route('users.create') }}">Créer un nouveau personnage</a></button>
