@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CharacterController;
 use App\Http\Controllers\GroupController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\UsersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,14 +20,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 //Routes Users
-Route::get('/users', [UsersController::class, 'index'])->name('characters.index');
-Route::get('/users/create', [UsersController::class, 'create'])->name('characters.create');
-Route::post('/users', [UsersController::class, 'store'])->name('characters.store');
-Route::get('/users/{id}', [UsersController::class, 'show'])->name('characters.show');
-Route::get('/users/{id}/edit', [UsersController::class, 'edit'])->name('characters.edit');
-Route::put('/users/{id}', [UsersController::class, 'update'])->name('characters.update');
-Route::delete('/users/{id}', [UsersController::class, 'destroy'])->name('characters.destroy');
+Route::get('/users', [UsersController::class, 'index'])->name('users.index');
+Route::get('/users/create', [UsersController::class, 'create'])->name('users.create');
+Route::post('/users', [UsersController::class, 'store'])->name('users.store');
+Route::get('/users/{id}', [UsersController::class, 'show'])->name('users.show');
+Route::get('/users/{id}/edit', [UsersController::class, 'edit'])->name('users.edit');
+Route::put('/users/{id}', [UsersController::class, 'update'])->name('users.update');
+Route::delete('/users/{id}', [UsersController::class, 'destroy'])->name('users.destroy');
+Route::post('/users/connection', [UsersController::class, 'connection'])->name('users.connection');
 
 
 
