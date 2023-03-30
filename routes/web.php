@@ -30,8 +30,10 @@ Route::get('/users/{id}', [UsersController::class, 'show'])->name('users.show');
 Route::get('/users/{id}/edit', [UsersController::class, 'edit'])->name('users.edit');
 Route::put('/users/{id}', [UsersController::class, 'update'])->name('users.update');
 Route::delete('/users/{id}', [UsersController::class, 'destroy'])->name('users.destroy');
-Route::post('/users/connection', [UsersController::class, 'connection'])->name('users.connection');
 
+//Routes Connection
+Route::get('/login/connection', [LoginController::class, 'index'])->name('login.index');
+Route::post('/login/connection', [LoginController::class, 'auth'])->name('login.auth');
 
 
 // Characters routes

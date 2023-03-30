@@ -13,7 +13,7 @@ class UsersController extends Controller
 
     public function index()
     {
-        return view('users.index');
+        return view('index');
     }
 
 
@@ -42,7 +42,7 @@ class UsersController extends Controller
 
         $user->save();
 
-        return redirect('/users/connection');
+        return redirect('/users/login');
     }
 
     /**
