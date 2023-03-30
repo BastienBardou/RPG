@@ -15,6 +15,7 @@
 </head>
 <body>
     <h1>Veuillez Vous Connectez <h1>
+        <br/>
 
     <form action="{{route('login.auth')}}" method="post">
         @csrf

@@ -29,12 +29,22 @@
         </ul>
       </nav>
 
-      <img class="brand" src="https://thumbs.dreamstime.com/b/sketch-hand-drawn-game-races-classes-mmorpg-games-dark-elf-assassin-thief-druid-priest-fire-mage-238179110.jpg" alt="MMORPG Races and Classes" style="width:100%;">
+      <img class="brand" src="https://thumbs.dreamstime.com/b/sketch-hand-drawn-game-races-classes-mmorpg-games-dark-elf-assassin-thief-druid-priest-fire-mage-238179110.jpg" alt="MMORPG Races and Classes" style="width:95%;">
       
 
     <div class="container">
         @yield('content')
     </div>
+
+    <br/>
+    <br/>
+
+    <footer class="footer-custom">
+        <div class="container">
+           <p>&copy; 2023 The Rise Of Heroes - Tous droits réservés.</p>
+           
+        </div>
+     </footer>
 
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

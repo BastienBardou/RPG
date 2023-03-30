@@ -17,6 +17,9 @@
 <body>
     <h1>Inscription</h1>
 
+    <br/>
+    
+
     <form action="{{route('users.store')}}" method="post">
         @csrf
         
