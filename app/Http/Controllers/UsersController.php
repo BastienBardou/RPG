@@ -42,7 +42,7 @@ class UsersController extends Controller
 
         $user->save();
 
-        return redirect('/users/login');
+        return redirect('/login');
     }
 
     /**
@@ -52,7 +52,7 @@ class UsersController extends Controller
     {
         $user = User::find($id);
 
-        return view('users.show', ['user' => $user]);
+        return view('login.auth', ['user' => $user]);
     }
 
     /**
