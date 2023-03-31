@@ -42,9 +42,9 @@ Route::put('/users/{id}', [UsersController::class, 'update'])->name('users.updat
 Route::delete('/users/{id}', [UsersController::class, 'destroy'])->name('users.destroy');
 
 //Routes Connection
-Route::get('/login/connection', [LoginController::class, 'showloginForm'])->name('login.index');
-Route::post('/login/connection', [LoginController::class, 'login'])->name('login.auth');
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/login/connection', [AuthController::class, 'showloginForm'])->name('login.index');
+Route::post('/login/connection', [AuthController::class, 'login'])->name('login.auth');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Characters routes
 Route::get('/characters', [CharacterController::class, 'index'])->name('characters.index');

@@ -15,6 +15,7 @@
     <title>Document</title>
 </head>
 <body>
+    <br/>
     <h1>Inscription</h1>
 
     <br/>

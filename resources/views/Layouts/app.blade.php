@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 </head>
 <body>
+    <div class="background-cover"></div>
+        <!-- Le contenu de votre page ici -->
+      
     <nav class="navbar">
         <a href="{{ route('home') }}" class="navbar-brand">The Rise Of Heroes</a>
         <ul class="navbar-nav">
@@ -28,22 +31,24 @@
           </li>
         </ul>
       </nav>
+      <br/>
 
-      <img class="brand" src="https://thumbs.dreamstime.com/b/sketch-hand-drawn-game-races-classes-mmorpg-games-dark-elf-assassin-thief-druid-priest-fire-mage-238179110.jpg" alt="MMORPG Races and Classes" style="width:95%;">
-      
+      <img class="brand" src="https://cdn.discordapp.com/attachments/1067358710822879232/1091257938120814623/white.jpg" alt="MMORPG Races and Classes" style="width:95%;">
+     
 
     <div class="container">
         @yield('content')
     </div>
+    
 
     <br/>
     <br/>
-
+    </div>
     <footer class="footer-custom">
         <div class="container">
            <p>&copy; 2023 The Rise Of Heroes - Tous droits réservés.</p>
            
-        </div>
+        
      </footer>
 
     <script src="{{ asset('js/app.js') }}"></script>
