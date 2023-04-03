@@ -44,6 +44,6 @@ Route::post('/users/create', [UsersController::class, 'store'])->name('users.sto
 //Routes Connection
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
-Route::get('/success', [AuthController::class, 'success'])->name('login.index');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/success', [AuthController::class, 'success'])->name('success.index');
 
