@@ -19,19 +19,20 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-}) ->name('home');
+// Route::get('/', function () {
+//     return view('accueil');
+// }) ->name('home');
 
 
 //Route NavBar 
-
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/',[HomeController::class,'index'])->name('accueil');
+// Route::get('/characters',[CharacterController::class, 'index'])->name('index');
 Route::get('/characters', 'CharacterController@index')->name('characters.index');
 Route::get('/groups', 'GroupController@index')->name('groups.index');
 Route::get('/catalog', 'CharacterController@catalog')->name('characters.catalog');
 Route::get('/teams', 'TeamController@index')->name('teams.index');
-Route::post('/logout', 'AuthController@logout')->name('logout');
+// Route::post('/logout', 'AuthController@logout')->name('logout');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
 
@@ -45,6 +46,5 @@ Route::post('/users/create', [UsersController::class, 'store'])->name('users.sto
 //Routes Connection
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/success', [AuthController::class, 'success'])->name('success');
 
