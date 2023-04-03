@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Création de Personnage</h1>
-
+<br>
 
 
 <!DOCTYPE html>
@@ -15,14 +15,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Characters</h1>
+   
 
     
-    <form action="{{route('users.store')}}" method="post">
+    <form action="{{route('characters.store')}}" method="post">
         @csrf
 
-        <input type="name" name="name" placeholder="Name">
-        <input type="description" name="description" placeholder="Description">
+        <input type="text" name="name" placeholder="Name">
+        <input type="text" name="description" placeholder="Description">
         <label for="speciality">Choisissez la spécialité:</label>
             <select name="speciality" id="speciality">
                 <option value="">--Choisissez la spécialité--</option>
@@ -32,9 +32,30 @@
                 <option value="Assassin">Assassin</option>
                 <option value="Berserker">Berserker</option>
                 <option value="Archer">Archer</option>
-                <button type="submit" value="Valider"></button>
-    </form>
+            </select>
+            <label>Magie<label>
+            <input type="number" name="mag" id="mag" placeholder="mag">
+            <label>Force<label>
+            <input type="number" name="for" id="for" placeholder="for">
+            <label>Agilité<label>
+            <input type="number" name="agi" id="agi" placeholder="agi">
+            <label>Intelligence<label>
+            <input type="number" name="int" id="int" placeholder="int">
+            <label>Points de vie<label>
+            <input type="number" name="pv"id="pv" placeholder="pv">
 
+            <input class="button" type="submit" value="Générer des stats" onclick="generateStats()">
+            <input class="button" type="submit" value="Créer">
+    </form>
+<script>
+        function generateStats() {
+            document.getElementById('mag').value = Math.floor(Math.random() * 14);
+            document.getElementById('for').value = Math.floor(Math.random() * 14);
+            document.getElementById('agi').value = Math.floor(Math.random() *  14);
+            document.getElementById('int').value = Math.floor(Math.random() *  14);
+            document.getElementById('pv').value = Math.floor(Math.random() * 50);
+        }
+</script>²
 
 </body>
 </html>

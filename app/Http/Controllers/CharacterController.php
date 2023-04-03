@@ -12,7 +12,7 @@ class CharacterController extends Controller
      */
     public function index()
     {
-       //
+       return view('characters.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class CharacterController extends Controller
      */
     public function create()
     {
-        //
+        return view('characters.create');
     }
 
     /**
@@ -28,12 +28,29 @@ class CharacterController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+            'speciality' => 'required|string',
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
+        $character = new Character;
+        $character->name = $validatedData['name'];
+        $character->description = $validatedData['description'];
+        $character->speciality = $validatedData['speciality'];
+        $character->user_id = auth()->user()->id;
+        // $character->mag = random_int(0, 14);
+        // $character->for = random_int(0, 14);
+        // $character->agi = random_int(0, 14);
+        // $character->int = random_int(0, 14);
+        // $character->pv = random_int(20,50);
+        $character->save();
+
+        
+
+        // Rediriger l'utilisateur vers une page de confirmation
+        return redirect()->route('characters.index')->with('success', 'Le personnage a été créé avec succès!');
+    }
     public function show(Character $character)
     {
         //

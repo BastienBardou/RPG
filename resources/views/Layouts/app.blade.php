@@ -16,7 +16,9 @@
     <nav class="navbar">
         <a href="{{ route('accueil') }}" class="navbar-brand">The Rise Of Heroes</a>
         <ul class="navbar-nav">
-          
+        <li class="nav-item">
+            <a href="{{ route('characters.create') }}" class="nav-link">Créer un personnage</a>
+          </li>
           <li class="nav-item">
             <a href="{{ route('characters.index') }}" class="nav-link">Mes personnages</a>
           </li>

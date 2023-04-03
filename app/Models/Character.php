@@ -10,16 +10,13 @@ use App\Models\Team;
 
 class Character extends Model
 {
-    use HasFactory;
+    protected $fillable = ['name', 'description', 'speciality', 'user_id', 'mag', 'for', 'agi','int','pv',];
 
-protected $fillable = [
-    'name', 'description', 'speciality', 'mag', 'for', 'agi', 'int', 'hp',
-];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
-public function user()
-{
-    return $this->belongsTo(User::class);
-}
 
 public function groups()
 {
