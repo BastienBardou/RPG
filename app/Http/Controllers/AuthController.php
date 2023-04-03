@@ -17,6 +17,11 @@ class AuthController extends Controller
         
     }
 
+    public function success(){
+
+        return view('success.success');
+    }
+
     public function login(Request $request)
     {
         $credentials = $request->validate([
