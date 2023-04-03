@@ -6,6 +6,7 @@ use App\Http\Controllers\GroupController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,13 +25,12 @@ Route::get('/', function () {
 
 
 //Route NavBar 
-
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/characters', 'CharacterController@index')->name('characters.index');
-Route::get('/groups', 'GroupController@index')->name('groups.index');
-Route::get('/catalog', 'CharacterController@catalog')->name('characters.catalog');
-Route::get('/teams', 'TeamController@index')->name('teams.index');
-Route::post('/logout', 'AuthController@logout')->name('logout');
+Route::get('/', [HomeController::class,'index'])->name('index');
+Route::get('/characters', [CharacterController::class,'index'])->name('characters.index');
+Route::get('/groups', [GroupController::class,'index'])->name('groups.index');
+Route::get('/catalog', [CharacterController::class, 'catalog'])->name('characters.catalog');
+Route::get('/teams', [TeamController::class, 'index'])->name('teams.index');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
 
@@ -45,5 +45,5 @@ Route::post('/users/create', [UsersController::class, 'store'])->name('users.sto
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-Route::get('/success', [AuthController::class, 'success'])->name('success.index');
+Route::get('/success', [AuthController::class, 'success'])->name('success');
 
