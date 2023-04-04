@@ -21,8 +21,8 @@
     <form action="{{route('characters.store')}}" method="post">
         @csrf
 
-        <input type="text" name="name" placeholder="Name">
-        <input type="text" name="description" placeholder="Description">
+        <p> Name<input type="text" name="name" placeholder="Name"></p>
+       <p>Description <input type="text" name="description" placeholder="Description"></p>
         <label for="speciality">Choisissez la spécialité:</label>
             <select name="speciality" id="speciality">
                 <option value="">--Choisissez la spécialité--</option>
@@ -33,17 +33,24 @@
                 <option value="Berserker">Berserker</option>
                 <option value="Archer">Archer</option>
             </select>
-            <p class="card">Magie <input name="magie" class="stat" type="text" value="{{ $mag }}" readonly></p>                     
-            <p class="card">Force <input name="force" class="stat" type="text" value="{{ $for }}" readonly></p>                    
-            <p class="card">Agilité <input name="agilite" class="stat" type="text" value="{{ $agi }}" readonly></p>                     
-            <p class="card">Intel <input name="intelligence" class="stat" type="text" value="{{ $int }}" readonly></p>                     
-            <p class="card">PV <input class="stat" name="PV" type="text" value="{{ $pv }}" readonly></p>
+            <p>Magie <input name="magie" class="stat" type="text" value="{{ $mag }}" readonly></p> 
+                               
+            <p>Force <input name="force" class="stat" type="text" value="{{ $for }}" readonly></p>        
+                          
+            <p>Agilité <input name="agilite" class="stat" type="text" value="{{ $agi }}" readonly></p>    
+                              
+            <p>Intelligence <input name="intelligence" class="stat" type="text" value="{{ $int }}" readonly></p>    
+                              
+            <p>Points de Vie <input name="PV" class="stat" type="text" value="{{ $pv }}" readonly></p>
+            
             <br/>
             <br/>
 
             <input class="button" type="submit" value="Générer des stats">
             <input class="button" type="submit" value="Créer">
     </form>
+
+    <br/>
 
 
 </body>
