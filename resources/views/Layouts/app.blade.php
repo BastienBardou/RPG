@@ -25,6 +25,9 @@
             <a href="{{ route('groups.index') }}" class="nav-link">Mes groupes</a>
           </li>
           <li class="nav-item">
+            <a href="{{ route('groups.create') }}" class="nav-link">Créer un groupe</a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route('characters.catalog') }}" class="nav-link">Catalogue de personnages</a>
           </li>
           <li class="nav-item">

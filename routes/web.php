@@ -51,6 +51,7 @@ Route::post('/characters/create', [CharacterController::class, 'store'])->name('
 Route::delete('/characters/{id}', [CharacterController::class, 'destroy'])->name('characters.destroy');
 
 // Routes Groups
+Route::get('/groups', [GroupController::class, 'index'])->name('groups.index');
 Route::get('/groups/create', [GroupController::class, 'create'])->name('groups.create');
 Route::post('/groups/create', [GroupController::class, 'store'])->name('groups.store');
 Route::delete('/groups/{id}', [GroupController::class, 'destroy'])->name('groups.destroy');

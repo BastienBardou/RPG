@@ -72,8 +72,21 @@ class GroupController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Group $group)
+    public function destroy($id)
     {
-        //
+        // Récupérer le groupe à supprimer
+        $group = Group::findOrFail($id);
+
+        // Vérifier que l'utilisateur peut supprimer le groupe
+        if ($group->user_id != auth()->user()->id) {
+            abort(403, 'Vous n\'êtes pas autorisé à supprimer ce groupe.');
+        }
+
+        // Supprimer le groupe de la base de données
+        $group->delete();
+
+        // Rediriger l'utilisateur vers la page d'index des groupes
+        return redirect()->route('groups.index')
+            ->with('success', 'Le groupe a été supprimé avec succès.');
     }
 }
