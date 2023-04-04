@@ -10,8 +10,7 @@
 <body>
 
 @auth
-    <div class="background-cover"></div>
-        <!-- Le contenu de votre page ici -->
+    
       
     <nav class="navbar">
         <a href="{{ route('accueil') }}" class="navbar-brand">The Rise Of Heroes</a>
@@ -36,14 +35,11 @@
           </li>
         </ul>
       </nav>
+      
       <br/>
 
-     
-
     @else 
-    <div class="background-cover"></div>
-        <!-- Le contenu de votre page ici -->
-      
+   
     <nav class="navbar">
         <a href="{{ route('accueil') }}" class="navbar-brand">The Rise Of Heroes</a>
         <ul class="navbar-nav">
@@ -54,29 +50,20 @@
             <a href="{{ route('login') }}" class="nav-link">Connexion</a>
           </li>     
         </ul>
-      </nav>
+   </nav>
       <br/>
 
-     
-
   @endauth
-
-  
-     
 
      <div class="container">
          @yield('content')
      </div>
-     <br>
-     <img class="brand" src="https://cdn.discordapp.com/attachments/1067358710822879232/1091257938120814623/white.jpg" alt="MMORPG Races and Classes" style="width:95%;">
-     <br/>
-     <br/>
-     </div>
+
      <footer class="footer-custom">
+      
          <div class="container">
             <p>&copy; 2023 The Rise Of Heroes - Tous droits réservés.</p>
-            
-         
+         </div>  
       </footer>
  
      <script src="{{ asset('js/app.js') }}"></script>

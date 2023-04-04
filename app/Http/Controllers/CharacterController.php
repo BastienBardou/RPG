@@ -20,7 +20,12 @@ class CharacterController extends Controller
      */
     public function create()
     {
-        return view('characters.create');
+        $mag = rand(0, 14);
+        $for = rand(0, 14);
+        $agi = rand(0, 14);
+        $int = rand(0, 14);
+        $pv = rand(20, 50);
+        return view('characters.create', compact('mag', 'for', 'agi', 'int', 'pv'));
     }
 
     /**
@@ -39,17 +44,15 @@ class CharacterController extends Controller
         $character->description = $validatedData['description'];
         $character->speciality = $validatedData['speciality'];
         $character->user_id = auth()->user()->id;
-        // $character->mag = random_int(0, 14);
-        // $character->for = random_int(0, 14);
-        // $character->agi = random_int(0, 14);
-        // $character->int = random_int(0, 14);
-        // $character->pv = random_int(20,50);
+        $character->mag = random_int(0, 14);
+        $character->for = random_int(0, 14);
+        $character->agi = random_int(0, 14);
+        $character->int = random_int(0, 14);
+        $character->pv = random_int(20,50);
         $character->save();
 
-        
-
         // Rediriger l'utilisateur vers une page de confirmation
-        return redirect()->route('characters.index')->with('success', 'Le personnage a été créé avec succès!');
+        return redirect()->route('characters.character')->with('success','Le personnage a été créé avec succès!');
     }
     public function show(Character $character)
     {

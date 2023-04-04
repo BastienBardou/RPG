@@ -33,29 +33,18 @@
                 <option value="Berserker">Berserker</option>
                 <option value="Archer">Archer</option>
             </select>
-            <label>Magie<label>
-            <input type="number" name="mag" id="mag" placeholder="mag">
-            <label>Force<label>
-            <input type="number" name="for" id="for" placeholder="for">
-            <label>Agilité<label>
-            <input type="number" name="agi" id="agi" placeholder="agi">
-            <label>Intelligence<label>
-            <input type="number" name="int" id="int" placeholder="int">
-            <label>Points de vie<label>
-            <input type="number" name="pv"id="pv" placeholder="pv">
+            <p>Magie <input name="magie" class="stat" type="text" value="{{ $mag }}" readonly></p>                     
+            <p>Force <input name="force" class="stat" type="text" value="{{ $for }}" readonly></p>                    
+            <p>Agilité <input name="agilite" class="stat" type="text" value="{{ $agi }}" readonly></p>                     
+            <p>Intel <input name="intelligence" class="stat" type="text" value="{{ $int }}" readonly></p>                     
+            <p>PV <input class="stat" name="PV" type="text" value="{{ $pv }}" readonly></p>
+            <br/>
+            <br/>
 
-            <input class="button" type="submit" value="Générer des stats" onclick="generateStats()">
+            <input class="button" type="submit" value="Générer des stats">
             <input class="button" type="submit" value="Créer">
     </form>
-<script>
-        function generateStats() {
-            document.getElementById('mag').value = Math.floor(Math.random() * 14);
-            document.getElementById('for').value = Math.floor(Math.random() * 14);
-            document.getElementById('agi').value = Math.floor(Math.random() *  14);
-            document.getElementById('int').value = Math.floor(Math.random() *  14);
-            document.getElementById('pv').value = Math.floor(Math.random() * 50);
-        }
-</script>²
+
 
 </body>
 </html>
