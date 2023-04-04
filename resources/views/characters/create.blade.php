@@ -46,9 +46,11 @@
             <br/>
             <br/>
 
-            <input class="button" type="submit" value="Générer des stats">
+            
             <input class="button" type="submit" value="Créer">
     </form>
+
+    <form><input class="button" type="submit" value="Générer des stats"></form>
 
     <br/>
 
