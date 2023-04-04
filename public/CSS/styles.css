@@ -219,20 +219,24 @@ color: #0000ff;
 .card .pv {
 color: #ff8c00;
 }
+
+
 body{
 background-image: url("https://wallpaper.dog/large/20354947.jpg");
 background-size: cover;
 position: relative;
 }
 
-p, label{
-  color: whitesmoke;
+p{
+  color: yellowgreen;
   display: block;
+  font-size: 20px;
 
 
 }
   
 input[type="text"], select, input[type="number"] {
+
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -265,6 +269,7 @@ form {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  margin: 8px;
 }
 
 .error-message {
@@ -273,9 +278,11 @@ form {
   font-size: 14px;
 }
 
-
-
-
+label {
+  color: yellowgreen;
+  display: block;
+  font-size: 20px;
+}
 
 
 
