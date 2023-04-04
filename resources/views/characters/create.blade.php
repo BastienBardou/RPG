@@ -16,7 +16,9 @@
 </head>
 <body>
    
-
+<br/>
+<br/>
+<br/>
     
     <form action="{{route('characters.store')}}" method="post">
         @csrf
