@@ -12,9 +12,9 @@ class CharacterController extends Controller
      */
     public function index()
     {
-       return view('characters.index');
+        $characters = Character::all();
+        return view('characters.index', ['characters' => $characters]);
     }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -52,7 +52,7 @@ class CharacterController extends Controller
         $character->save();
 
         // Rediriger l'utilisateur vers une page de confirmation
-        return redirect()->route('characters.character')->with('success','Le personnage a été créé avec succès!');
+        return redirect()->route('characters.index')->with('success','Le personnage a été créé avec succès!');
     }
     public function show(Character $character)
     {

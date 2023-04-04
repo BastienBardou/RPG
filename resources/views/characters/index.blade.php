@@ -16,11 +16,13 @@
 </head>
 <body>
     
-
+    <div>
+        @foreach ($characters as $character)
+            <p> Name {{ $character->name }} </p>
+            <p> Magie {{ $character->mag }}</p>
+        @endforeach
+    </div>
     
-    
-
-
 </body>
 </html>
 
