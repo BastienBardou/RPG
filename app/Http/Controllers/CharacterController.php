@@ -48,11 +48,11 @@ class CharacterController extends Controller
         $character->for = random_int(0, 14);
         $character->agi = random_int(0, 14);
         $character->int = random_int(0, 14);
-        $character->pv = random_int(20,50);
+        $character->pv = random_int(20, 50);
         $character->save();
 
         // Rediriger l'utilisateur vers une page de confirmation
-        return redirect()->route('characters.index')->with('success','Le personnage a été créé avec succès!');
+        return redirect()->route('characters.index')->with('success', 'Le personnage a été créé avec succès!');
     }
     public function show(Character $character)
     {
@@ -78,8 +78,21 @@ class CharacterController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Character $character)
+    public function destroy($id)
     {
-        //
+        // Récupérer le personnage à supprimer
+        $character = Character::findOrFail($id);
+
+        // Vérifier que l'utilisateur peut supprimer le personnage
+        if ($character->user_id != auth()->user()->id) {
+            abort(403, 'Vous n\'êtes pas autorisé à supprimer ce personnage.');
+        }
+
+        // Supprimer le personnage de la base de données
+        $character->delete();
+
+        // Rediriger l'utilisateur vers la page d'index des personnages
+        return redirect()->route('characters.index')
+            ->with('success', 'Le personnage a été supprimé avec succès.');
     }
 }

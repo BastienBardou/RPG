@@ -29,6 +29,11 @@
                 <li class="int">Intelligence: {{ $character->int }}</li>
                 <li class="pv">Points de Vie: {{ $character->pv }}</li>
             </ul>
+            <form action="{{ route('characters.destroy', $character->id) }}" method="post">
+                @csrf
+                @method('DELETE')
+                <button class="button" type="submit">Supprimer</button>
+            </form>
         </div>
     @endforeach
 </div>

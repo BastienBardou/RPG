@@ -23,8 +23,8 @@ use App\Http\Controllers\HomeController;
 
 
 //Route NavBar 
-Route::get('/',[HomeController::class,'index'])->name('accueil');
-Route::get('/characters',[CharacterController::class, 'index'])->name('characters.index');
+Route::get('/', [HomeController::class, 'index'])->name('accueil');
+Route::get('/characters', [CharacterController::class, 'index'])->name('characters.index');
 Route::get('/groups', 'GroupController@index')->name('groups.index');
 Route::get('/catalog', 'CharacterController@catalog')->name('characters.catalog');
 Route::get('/teams', 'TeamController@index')->name('teams.index');
@@ -48,4 +48,9 @@ Route::get('/success', [AuthController::class, 'success'])->name('success');
 //Routes characters
 Route::get('/characters/create', [CharacterController::class, 'create'])->name('characters.create');
 Route::post('/characters/create', [CharacterController::class, 'store'])->name('characters.store');
+Route::delete('/characters/{id}', [CharacterController::class, 'destroy'])->name('characters.destroy');
 
+// Routes Groups
+Route::get('/groups/create', [GroupController::class, 'create'])->name('groups.create');
+Route::post('/groups/create', [GroupController::class, 'store'])->name('groups.store');
+Route::delete('/groups/{id}', [GroupController::class, 'destroy'])->name('groups.destroy');
