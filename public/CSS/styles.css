@@ -161,4 +161,65 @@ input[type="text"], select, input[type="number"] {
   padding: 10px;
 }
 
+.card-container {
+display: flex;
+flex-wrap: wrap;
+}
 
+.card {
+width: 300px;
+margin: 10px;
+padding: 20px;
+background-color: #f2f2f2;
+box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+border-radius: 5px;
+}
+
+.card h2 {
+font-size: 24px;
+margin-bottom: 10px;
+}
+
+.card p {
+font-size: 16px;
+margin-bottom: 5px;
+}
+
+.card .speciality {
+font-weight: bold;
+}
+
+.card ul.stats {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+.card ul.stats li {
+margin-bottom: 5px;
+}
+
+.card .mag {
+color: #9400d3;
+}
+
+.card .for {
+color: #ff0000;
+}
+
+.card .agi {
+color: #00ff00;
+}
+
+.card .int {
+color: #0000ff;
+}
+
+.card .pv {
+color: #ff8c00;
+}
+
+
+
+  
+ 

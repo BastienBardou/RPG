@@ -16,12 +16,22 @@
 </head>
 <body>
     
-    <div>
-        @foreach ($characters as $character)
-            <p> Name {{ $character->name }} </p>
-            <p> Magie {{ $character->mag }}</p>
-        @endforeach
-    </div>
+<div class="card-container">
+    @foreach ($characters as $character)
+        <div class="card">
+            <h2>{{ $character->name }}</h2>
+            <p class="speciality">{{ $character->speciality }}</p>
+            <p>{{ $character->description }}</p>
+            <ul class="stats">
+                <li class="mag">Magie: {{ $character->mag }}</li>
+                <li class="for">Force: {{ $character->for }}</li>
+                <li class="agi">Agilité: {{ $character->agi }}</li>
+                <li class="int">Intelligence: {{ $character->int }}</li>
+                <li class="pv">Points de Vie: {{ $character->pv }}</li>
+            </ul>
+        </div>
+    @endforeach
+</div>
     
 </body>
 </html>
