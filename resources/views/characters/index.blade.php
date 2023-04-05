@@ -15,7 +15,7 @@
     <title>Document</title>
 </head>
 <body>
-    
+
 <div class="card-container">
     @foreach ($characters as $character)
         <div class="card">
@@ -37,6 +37,9 @@
         </div>
     @endforeach
 </div>
+<br/>
+<br/>
+<br/>
     
 </body>
 </html>

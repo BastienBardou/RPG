@@ -78,9 +78,9 @@ class GroupController extends Controller
         $group = Group::findOrFail($id);
 
         // Vérifier que l'utilisateur peut supprimer le groupe
-        if ($group->user_id != auth()->user()->id) {
-            abort(403, 'Vous n\'êtes pas autorisé à supprimer ce groupe.');
-        }
+        // if ($group->user_id != auth()->user()->id) {
+        //     abort(403, 'Vous n\'êtes pas autorisé à supprimer ce groupe.');
+        // }
 
         // Supprimer le groupe de la base de données
         $group->delete();

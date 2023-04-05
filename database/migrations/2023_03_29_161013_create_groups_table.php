@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description')->nullable();
-            $table->unsignedInteger('max_size');
+            $table->unsignedInteger('size');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }

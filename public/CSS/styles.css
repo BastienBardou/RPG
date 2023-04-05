@@ -225,6 +225,8 @@ body{
 background-image: url("https://wallpaper.dog/large/20354947.jpg");
 background-size: cover;
 position: relative;
+background-repeat: no-repeat;
+background-color: #222;
 }
 
 p{

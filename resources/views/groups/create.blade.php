@@ -16,8 +16,6 @@
 </head>
 <body>
    
-
-    
     <form action="{{route('groups.store')}}" method="post">
         @csrf
 
@@ -25,18 +23,8 @@
        <p>Description <input type="text" name="description" placeholder="Description"></p>
        <p>Size <input type="text" name="size" placeholder="Nombre de Places"></p>
           
-            
-            <br/>
-            <br/>
-
-            
             <input class="button" type="submit" value="Créer">
     </form>
-
-    <form><input class="button" type="submit" value="Générer des stats"></form>
-
-    <br/>
-
 
 </body>
 </html>
